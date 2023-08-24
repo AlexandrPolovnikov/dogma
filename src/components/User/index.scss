@@ -1,0 +1,33 @@
+.user {
+    width: 300px;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    img {
+        border-radius: 10%;
+        width: 150px;
+        height: 150px;
+    }
+}
+
+.frends-user {
+    width: 100px;
+    height: 100px;
+    display: grid;
+    grid-template-rows: 80px 10px;
+    align-items: center;
+    justify-items: center;
+    font-size: 10px;
+    border-radius: 15px;
+
+    img {
+        border-radius: 50%;
+        width: 70px;
+        height: 70px;
+    }
+}
+.frends-user:hover {
+    background: rgb(59, 59, 59);
+}

@@ -1,0 +1,18 @@
+.Main-Page {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 150px 1fr;
+}
+.Menu {
+    display: grid;
+    grid-template-rows: 100px 50px 50px 50px 1fr;
+    align-content: center;
+    padding: 20px;
+    &.active {
+    }
+}
+
+.Content {
+    // border: 1px solid #ccc;
+}
