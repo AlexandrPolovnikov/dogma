@@ -1,5 +1,5 @@
 .Photos {
-    width: 95%;
+    width: 95vw;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -7,7 +7,7 @@
     justify-content: center;
     margin: 0 auto;
     &__header-sort {
-        width: 90%;
+        width: 90vw;
         height: 100px;
         display: flex;
         flex-direction: row;
