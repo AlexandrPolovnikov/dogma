@@ -16,3 +16,12 @@
 .Content {
     // border: 1px solid #ccc;
 }
+.AuthLogin {
+    display: none;
+}
+.AuthLogin.active {
+    display: flex;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+}

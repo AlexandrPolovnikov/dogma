@@ -3,9 +3,8 @@ import './index.scss';
 import axios from 'axios';
 import User from '../../components/User';
 import Button from '../../components/UI/Button';
-import { title } from 'process';
 import { COLOR_TYPES } from '../../library/constants.enum';
-import { YMaps, Map, Panorama } from '@pbe/react-yandex-maps';
+import { YMaps, Map } from '@pbe/react-yandex-maps';
 
 const Profile = () => {
     const [users, setUsers] = useState<any>([]);
@@ -23,14 +22,13 @@ const Profile = () => {
                 })
                 .finally(() => setFetching(false));
         }
-    }, [fetching]);
+    }, [fetching, users]);
 
-    console.log(users);
     return (
         <div className="Profile">
             <div className="Profile__header">
                 {users
-                    .filter((item: { id: number }) => item.id == 66)
+                    .filter((item: { id: string }) => item.id === '66')
                     .map(
                         (user: {
                             id: number;

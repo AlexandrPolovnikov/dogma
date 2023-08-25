@@ -7,7 +7,7 @@ import { COLOR_TYPES } from './library/constants.enum';
 import Sun from './components/UI/Button/icons/Sun';
 
 function App() {
-    const [active, setActive] = useState(false);
+    const [active, setActive] = useState(true);
     const navigate = useNavigate();
 
     const clickActive = (value: string) => {
@@ -21,13 +21,16 @@ function App() {
 
     return (
         <div className="Main-Page">
-            <div className={active ? 'Menu active' : 'Menu'} onClick={(e) => e.stopPropagation()}>
+            {/* <div className={active ? 'AuthLogin active' : 'AuthLogin'} onClick={() => clickActive}>
+                <Login />
+            </div> */}
+            <div className="Menu" onClick={(e) => e.stopPropagation()}>
                 <Sun />
                 <Button
                     className="button home-icon"
                     text="Profile"
                     type={COLOR_TYPES.info}
-                    onClick={() => clickActive('')}
+                    onClick={() => clickActive('profile')}
                 />
                 <Button
                     className="item__button home-icon"
