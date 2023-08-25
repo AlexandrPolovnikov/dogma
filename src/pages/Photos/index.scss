@@ -1,0 +1,24 @@
+.Photos {
+    width: 95%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    &__header-sort {
+        width: 90%;
+        height: 100px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__header-content {
+    }
+
+    img {
+        width: 100%;
+        border-radius: 20px;
+    }
+}

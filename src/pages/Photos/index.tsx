@@ -50,8 +50,8 @@ function Photos() {
     };
 
     return (
-        <div className="News">
-            <div className="News__header-sort">
+        <div className="Photos">
+            <div className="Photos__header-sort">
                 <Input
                     value={filter.query}
                     onChange={(e) => setFilter({ ...filter, query: e.target.value })}
@@ -69,15 +69,13 @@ function Photos() {
                 />
             </div>
 
-            <div>
+            <div className="Photos__header-content">
                 {sortedAndSearchedPosts.map((post: { id: number; title: string; url: string }) => (
                     <div key={post.id}>
                         {isLoading ? (
                             <h1>Loading...</h1>
                         ) : (
-                            <div>
-                                <Item img={post.url} title={post.title} id={post.id} />
-                            </div>
+                            <Item img={post.url} title={post.title} id={post.id} />
                         )}
                     </div>
                 ))}

@@ -21,9 +21,6 @@ function App() {
 
     return (
         <div className="Main-Page">
-            {/* <div className={active ? 'AuthLogin active' : 'AuthLogin'} onClick={() => clickActive}>
-                <Login />
-            </div> */}
             <div className="Menu" onClick={(e) => e.stopPropagation()}>
                 <Sun />
                 <Button
