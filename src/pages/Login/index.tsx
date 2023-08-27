@@ -15,28 +15,32 @@ const Login = ({ setUserData }: any) => {
     const navigate = useNavigate();
 
     const signInSubmit = () => {
+        login !== testLogin || password !== testPassword
+            ? alert(`Не правильный логин или пароль`)
+            : authorizedUserApi(
+                  { email: login, password: password, rememberMe: 1 },
+                  () =>
+                      getProfileDataApi((res: { data: string }) => {
+                          setUserData(
+                              res.data ?? {
+                                  email: 'candidate@test.com',
+                                  password: 'Sj3jtod@!3',
+                              },
+                              navigate('/profile'),
+                          );
+                      }),
+                  (err: { validationErrors: React.SetStateAction<{}>; code: string }) => {
+                      if (err?.validationErrors) {
+                          setSignInError(err?.validationErrors);
+                      } else {
+                          console.log(login, testLogin + '' + password, testPassword);
+                          alert(`Ошибка Код:${err?.code}`);
+                          navigate('/profile');
+                      }
+                  },
+              );
+
         setSignInError({});
-        authorizedUserApi(
-            { email: login, password: password, rememberMe: 1 },
-            () =>
-                getProfileDataApi((res: { data: any }) =>
-                    setUserData(
-                        res.data ?? {
-                            email: 'candidate@test.com',
-                            password: 'Sj3jtod@!3',
-                        },
-                        navigate('/profile'),
-                    ),
-                ),
-            (err: { validationErrors: React.SetStateAction<{}>; code: any }) => {
-                if (err?.validationErrors) {
-                    setSignInError(err?.validationErrors);
-                } else {
-                    alert(`Ошибка Код:${err?.code}`);
-                    navigate('/profile');
-                }
-            },
-        );
     };
 
     return (
@@ -69,7 +73,7 @@ const Login = ({ setUserData }: any) => {
             />
             <Button
                 onClick={signInSubmit}
-                disabled={password !== testPassword || login !== testLogin}
+                disabled={!password || !login}
                 text="Вход"
                 type={COLOR_TYPES.info}
             />

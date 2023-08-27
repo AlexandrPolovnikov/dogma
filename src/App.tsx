@@ -21,7 +21,7 @@ function App() {
 
     return (
         <div className="Main-Page">
-            <div className="Menu" onClick={(e) => e.stopPropagation()}>
+            <nav className="Menu">
                 <Sun />
                 <Button
                     className="button home-icon"
@@ -42,7 +42,7 @@ function App() {
                     onClick={() => clickActive('photos')}
                 />
                 <></>
-            </div>
+            </nav>
             <div className="Content">
                 <div>
                     <Routes>
